@@ -3,7 +3,7 @@ import { createMimeMessage } from "mimetext";
 
 const SENDER = "contact@chius.cc";
 const FORWARD_TO = "chius.me@proton.me";
-const AUTO_REPLY_BODY = "I received your email and will get back to you soon.";
+const AUTO_REPLY_BODY = "✉️ Thank you for your email! I received your message and will get back to you soon.";
 
 export function createReplySubject(subject: string | null): string {
 	const decodedSubject = subject ? decodeMimeWords(subject) : "Email received";
@@ -68,7 +68,7 @@ export default {
 			msg.setHeader("In-Reply-To", originalMessageId);
 		}
 
-		msg.setSender({ name: "Email Reply Worker", addr: SENDER });
+		msg.setSender({ name: "Chius's Auto-Reply", addr: SENDER });
 		msg.setRecipient(message.from);
 		msg.setSubject(createReplySubject(originalSubject));
 		msg.addMessage({
