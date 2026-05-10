@@ -3,9 +3,10 @@
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "email-reply-worker",
 	"main": "src/index.ts",
+	"account_id": "09586f114a1403169164570ec0efac06",
+	"$schema": "node_modules/wrangler/config-schema.json",
 	"compatibility_date": "2026-05-10",
 	"observability": {
 		"enabled": true
