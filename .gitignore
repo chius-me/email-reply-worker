@@ -166,7 +166,16 @@ dist
 !.env.example
 .wrangler/
 
+# Generated
+
+worker-configuration.d.ts
+
+# IDE
+
+.vscode/
+
 # opencode
 
 .superpowers/
+AGENTS.md
 docs/
