@@ -31,7 +31,7 @@ describe("Email reply worker", () => {
 		expect(await response.text()).toMatchInlineSnapshot(`"Hello World!"`);
 	});
 
-	it("forwards incoming email and replies from contact@chius.cc", async () => {
+	it("forwards incoming email and replies from bot@chius.cc", async () => {
 		const ctx = createExecutionContext();
 		const reply = vi.fn(async () => ({ messageId: "reply-id" }));
 		const forward = vi.fn(async () => ({ messageId: "forward-id" }));
@@ -56,7 +56,7 @@ describe("Email reply worker", () => {
 		expect(forward).toHaveBeenCalledWith("chius.me@proton.me");
 		expect(reply).toHaveBeenCalledTimes(1);
 		const [replyMessage] = reply.mock.calls[0];
-		expect(replyMessage.from).toBe("contact@chius.cc");
+		expect(replyMessage.from).toBe("bot@chius.cc");
 		expect(replyMessage.to).toBe("sender@example.com");
 	});
 });

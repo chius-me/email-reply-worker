@@ -1,7 +1,7 @@
 import { EmailMessage } from "cloudflare:email";
 import { createMimeMessage } from "mimetext";
 
-const SENDER = "contact@chius.cc";
+const SENDER = "bot@chius.cc";
 const FORWARD_TO = "chius.me@proton.me";
 const AUTO_REPLY_BODY = "✉️ Thank you for your email! I received your message and will get back to you soon.";
 
@@ -68,7 +68,7 @@ export default {
 			msg.setHeader("In-Reply-To", originalMessageId);
 		}
 
-		msg.setSender({ name: "Chius's Auto-Reply", addr: SENDER });
+		msg.setSender({ name: "Auto-Reply", addr: SENDER });
 		msg.setRecipient(message.from);
 		msg.setSubject(createReplySubject(originalSubject));
 		msg.addMessage({
