@@ -20,6 +20,7 @@
     "mimetext": "^3.0.28"
   },
   "overrides": {
-    "sharp": "0.35.4"
+    "sharp": "0.35.4",
+    "undici": "7.29.1"
   }
 }
